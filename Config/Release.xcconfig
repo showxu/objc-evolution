@@ -1,0 +1,4 @@
+
+GCC_PREFIX_HEADER = Swift/Public Headers/swift
+
+CLANG_CXX_LANGUAGE_STANDARD = gnu++17

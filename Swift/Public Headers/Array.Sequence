@@ -1,0 +1,39 @@
+//
+//  Created by 0xxd0 on 2016/11/21.
+//  Copyright © 2016年 0xxd0. All rights reserved.
+//
+
+_Pragma("once")
+
+#ifdef __OBJC__
+
+#import "Array"
+#import "Sequence"
+
+_Pragma("clang assume_nonnull begin")
+
+@interface Array<T>(FastEnumeration) <FastEnumeration>
+
+- (T)enumeratedType;
+
+@end
+
+
+@interface Array<T>(Sequence) <Sequence>
+
+- (__nullable T (^)(BOOL (^by)(T x, T y)))min;
+
+- (__nullable T (^)(BOOL (^by)(T x, T y)))max;
+
+- (Array *(^)(id (^traform)(T value)))map;
+
+- (Array<T> *(^)(BOOL (^isIncluded)(T value)))filter;
+
+- (Array *(^)(void (^)(T)))forEach;
+
+@end
+
+_Pragma("clang assume_nonnull end")
+
+#endif
+

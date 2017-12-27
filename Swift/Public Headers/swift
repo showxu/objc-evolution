@@ -1,0 +1,49 @@
+//
+//  Created by 0xxd0 on 2016/12/2.
+//  Copyright © 2016年 0xxd0. All rights reserved.
+//
+
+_Pragma("once")
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+// Introduce Swift let
+#ifdef __cplusplus
+    #define let const auto
+#else
+    #define let const __auto_type
+#endif
+
+// Introduce Swift var
+#ifdef __cplusplus
+    #define var auto
+#else
+    #define var __auto_type
+#endif
+
+// Introduce Swift defer
+typedef void (^defer_block_t)(void);
+
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wunused-function\"")
+static inline void cleanup(__strong defer_block_t *block) {
+    (*block)();
+}
+_Pragma("clang diagnostic pop")
+
+#define defer_block($TOKEN) \
+    __defer_block_ ## $TOKEN ## __
+    
+#define defer_block_at_line($LINE)  \
+    defer_block($LINE)
+
+#define defer   \
+    __strong defer_block_t defer_block_at_line(__LINE__)    \
+        __attribute__((cleanup(cleanup), unused)) = ^
+
+#ifdef __cplusplus
+}
+#endif
+

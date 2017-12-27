@@ -1,0 +1,12 @@
+//
+//  Protocol.h
+//
+//  Created by 0xxd0 on 2016/12/31.
+//  Copyright © 2016年 0xxd0. All rights reserved.
+//
+
+_Pragma("once")
+
+#import "Extension"
+#import "Sequence"
+

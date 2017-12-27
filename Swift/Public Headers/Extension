@@ -1,0 +1,63 @@
+//
+//  CocoaSwift
+//
+//  Created by 0xxd0 on 2016/12/27.
+//  Copyright © 2016年 0xxd0. All rights reserved.
+//
+
+_Pragma("once")
+
+#import <objc/runtime.h>
+
+#ifdef __OBJC__
+
+/**
+ Add default implementation to Protocol
+
+ @param $PROTOCOL The Protocol to inspect
+ */
+#define extension($PROTOCOL)    \
+    extension_specific($PROTOCOL, protocol_container($PROTOCOL))
+
+/**
+ Add default implementation to Protocol by using a helper Class
+
+ @param $PROTOCOL The Protocol to inspect
+ @param $CLASS The helper Class
+ */
+#define extension_specific($PROTOCOL, $CLASS)   \
+    _Pragma("clang diagnostic push")    \
+    _Pragma("clang diagnostic ignored \"-Wprotocol\"")  \
+    protocol $PROTOCOL; \
+    \
+    @interface $CLASS : NSObject <$PROTOCOL> @end   \
+    \
+    @implementation $CLASS  \
+	\
+    + (void)load {  \
+        protocol_load_extention(@protocol($PROTOCOL), self); \
+    }   \
+    _Pragma("clang diagnostic pop") \
+
+#define protocol_container($PROTOCOL) \
+    protocol_container_specific($PROTOCOL, __COUNTER__)
+
+#define protocol_container_specific($PROTOCOL, $TOKEN) \
+    protocol_container_name($PROTOCOL, $TOKEN, __CocoaSwift_, _Protocol_Container__)
+
+#define protocol_container_name($PROTOCOL, $TOKEN, $PREFIX, $SUFFIX) \
+    $PREFIX ## $PROTOCOL ## _ ## $TOKEN ## $SUFFIX
+
+#endif
+
+/**
+ Add extention to existing Protocol
+ 
+ @param p Protocol to inpect
+ @param cls The Class which comforms to Protocol p
+ */
+OBJC_EXPORT
+void protocol_load_extention(Protocol *p, Class cls)
+    OBJC_AVAILABLE(10.0, 2.0, 9.0, 1.0, 2.0);
+
+
