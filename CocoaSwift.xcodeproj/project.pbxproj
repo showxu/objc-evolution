@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		338277441FF92F3D0077F5F4 /* Type in Resources */ = {isa = PBXBuildFile; fileRef = 338277431FF92F3D0077F5F4 /* Type */; };
-		338277451FF92F3D0077F5F4 /* Type in Resources */ = {isa = PBXBuildFile; fileRef = 338277431FF92F3D0077F5F4 /* Type */; };
-		338277491FF92F520077F5F4 /* Array.Type in Resources */ = {isa = PBXBuildFile; fileRef = 338277461FF92F520077F5F4 /* Array.Type */; };
-		3382774A1FF92F520077F5F4 /* Array.Type in Resources */ = {isa = PBXBuildFile; fileRef = 338277461FF92F520077F5F4 /* Array.Type */; };
-		3382774B1FF92F520077F5F4 /* Array.Sequence in Resources */ = {isa = PBXBuildFile; fileRef = 338277471FF92F520077F5F4 /* Array.Sequence */; };
-		3382774C1FF92F520077F5F4 /* Array.Sequence in Resources */ = {isa = PBXBuildFile; fileRef = 338277471FF92F520077F5F4 /* Array.Sequence */; };
-		3382774D1FF92F520077F5F4 /* Array in Resources */ = {isa = PBXBuildFile; fileRef = 338277481FF92F520077F5F4 /* Array */; };
-		3382774E1FF92F520077F5F4 /* Array in Resources */ = {isa = PBXBuildFile; fileRef = 338277481FF92F520077F5F4 /* Array */; };
-		338277581FF9305D0077F5F4 /* log in Resources */ = {isa = PBXBuildFile; fileRef = 338277531FF9305C0077F5F4 /* log */; };
-		338277591FF9305D0077F5F4 /* log in Resources */ = {isa = PBXBuildFile; fileRef = 338277531FF9305C0077F5F4 /* log */; };
-		3382775A1FF9305D0077F5F4 /* meta in Resources */ = {isa = PBXBuildFile; fileRef = 338277541FF9305D0077F5F4 /* meta */; };
-		3382775B1FF9305D0077F5F4 /* meta in Resources */ = {isa = PBXBuildFile; fileRef = 338277541FF9305D0077F5F4 /* meta */; };
-		3382775C1FF9305D0077F5F4 /* swift in Resources */ = {isa = PBXBuildFile; fileRef = 338277551FF9305D0077F5F4 /* swift */; };
-		3382775D1FF9305D0077F5F4 /* swift in Resources */ = {isa = PBXBuildFile; fileRef = 338277551FF9305D0077F5F4 /* swift */; };
-		338277611FF930930077F5F4 /* Extension in Resources */ = {isa = PBXBuildFile; fileRef = 3382775E1FF930930077F5F4 /* Extension */; };
-		338277621FF930930077F5F4 /* Extension in Resources */ = {isa = PBXBuildFile; fileRef = 3382775E1FF930930077F5F4 /* Extension */; };
-		338277631FF930930077F5F4 /* Sequence in Resources */ = {isa = PBXBuildFile; fileRef = 3382775F1FF930930077F5F4 /* Sequence */; };
-		338277641FF930930077F5F4 /* Sequence in Resources */ = {isa = PBXBuildFile; fileRef = 3382775F1FF930930077F5F4 /* Sequence */; };
-		338277651FF930930077F5F4 /* Protocol in Resources */ = {isa = PBXBuildFile; fileRef = 338277601FF930930077F5F4 /* Protocol */; };
-		338277661FF930930077F5F4 /* Protocol in Resources */ = {isa = PBXBuildFile; fileRef = 338277601FF930930077F5F4 /* Protocol */; };
-		338277681FF930B50077F5F4 /* CocoaSwift in Headers */ = {isa = PBXBuildFile; fileRef = 338277671FF930B50077F5F4 /* CocoaSwift */; };
-		338277691FF930B50077F5F4 /* CocoaSwift in Headers */ = {isa = PBXBuildFile; fileRef = 338277671FF930B50077F5F4 /* CocoaSwift */; };
+		338277681FF930B50077F5F4 /* CocoaSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 338277671FF930B50077F5F4 /* CocoaSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277691FF930B50077F5F4 /* CocoaSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 338277671FF930B50077F5F4 /* CocoaSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3382776B1FF930D00077F5F4 /* Array.Sequence.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3382776A1FF930D00077F5F4 /* Array.Sequence.mm */; };
 		3382776C1FF930D00077F5F4 /* Array.Sequence.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3382776A1FF930D00077F5F4 /* Array.Sequence.mm */; };
 		3382776E1FF930F00077F5F4 /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3382776D1FF930F00077F5F4 /* Extension.cpp */; };
 		3382776F1FF930F00077F5F4 /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3382776D1FF930F00077F5F4 /* Extension.cpp */; };
 		338277711FF937080077F5F4 /* Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277701FF937080077F5F4 /* Sequence.m */; };
 		338277721FF937080077F5F4 /* Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277701FF937080077F5F4 /* Sequence.m */; };
+		338277761FF94A960077F5F4 /* swift in Headers */ = {isa = PBXBuildFile; fileRef = 338277551FF9305D0077F5F4 /* swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277771FF94A960077F5F4 /* meta in Headers */ = {isa = PBXBuildFile; fileRef = 338277541FF9305D0077F5F4 /* meta */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277781FF94A960077F5F4 /* log in Headers */ = {isa = PBXBuildFile; fileRef = 338277531FF9305C0077F5F4 /* log */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277791FF94A960077F5F4 /* Protocol in Headers */ = {isa = PBXBuildFile; fileRef = 338277601FF930930077F5F4 /* Protocol */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382777A1FF94A960077F5F4 /* Extension in Headers */ = {isa = PBXBuildFile; fileRef = 3382775E1FF930930077F5F4 /* Extension */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382777B1FF94A960077F5F4 /* Sequence in Headers */ = {isa = PBXBuildFile; fileRef = 3382775F1FF930930077F5F4 /* Sequence */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382777C1FF94A960077F5F4 /* Type in Headers */ = {isa = PBXBuildFile; fileRef = 338277431FF92F3D0077F5F4 /* Type */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382777D1FF94A960077F5F4 /* Array in Headers */ = {isa = PBXBuildFile; fileRef = 338277481FF92F520077F5F4 /* Array */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382777E1FF94A960077F5F4 /* Array.Type in Headers */ = {isa = PBXBuildFile; fileRef = 338277461FF92F520077F5F4 /* Array.Type */; settings = {ATTRIBUTES = (Public, ); }; };
+		3382777F1FF94A960077F5F4 /* Array.Sequence in Headers */ = {isa = PBXBuildFile; fileRef = 338277471FF92F520077F5F4 /* Array.Sequence */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277801FF94A970077F5F4 /* swift in Headers */ = {isa = PBXBuildFile; fileRef = 338277551FF9305D0077F5F4 /* swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277811FF94A970077F5F4 /* meta in Headers */ = {isa = PBXBuildFile; fileRef = 338277541FF9305D0077F5F4 /* meta */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277821FF94A970077F5F4 /* log in Headers */ = {isa = PBXBuildFile; fileRef = 338277531FF9305C0077F5F4 /* log */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277831FF94A970077F5F4 /* Protocol in Headers */ = {isa = PBXBuildFile; fileRef = 338277601FF930930077F5F4 /* Protocol */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277841FF94A970077F5F4 /* Extension in Headers */ = {isa = PBXBuildFile; fileRef = 3382775E1FF930930077F5F4 /* Extension */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277851FF94A970077F5F4 /* Sequence in Headers */ = {isa = PBXBuildFile; fileRef = 3382775F1FF930930077F5F4 /* Sequence */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277861FF94A970077F5F4 /* Type in Headers */ = {isa = PBXBuildFile; fileRef = 338277431FF92F3D0077F5F4 /* Type */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277871FF94A970077F5F4 /* Array in Headers */ = {isa = PBXBuildFile; fileRef = 338277481FF92F520077F5F4 /* Array */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277881FF94A970077F5F4 /* Array.Type in Headers */ = {isa = PBXBuildFile; fileRef = 338277461FF92F520077F5F4 /* Array.Type */; settings = {ATTRIBUTES = (Public, ); }; };
+		338277891FF94A970077F5F4 /* Array.Sequence in Headers */ = {isa = PBXBuildFile; fileRef = 338277471FF92F520077F5F4 /* Array.Sequence */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,7 @@
 		3382775E1FF930930077F5F4 /* Extension */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Extension; path = "Public Headers/Extension"; sourceTree = "<group>"; };
 		3382775F1FF930930077F5F4 /* Sequence */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Sequence; path = "Public Headers/Sequence"; sourceTree = "<group>"; };
 		338277601FF930930077F5F4 /* Protocol */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Protocol; path = "Public Headers/Protocol"; sourceTree = "<group>"; };
-		338277671FF930B50077F5F4 /* CocoaSwift */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = CocoaSwift; sourceTree = "<group>"; };
+		338277671FF930B50077F5F4 /* CocoaSwift.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = CocoaSwift.h; sourceTree = "<group>"; };
 		3382776A1FF930D00077F5F4 /* Array.Sequence.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Array.Sequence.mm; path = Source/Array.Sequence.mm; sourceTree = "<group>"; };
 		3382776D1FF930F00077F5F4 /* Extension.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Extension.cpp; path = Source/Extension.cpp; sourceTree = "<group>"; };
 		338277701FF937080077F5F4 /* Sequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Sequence.m; path = Source/Sequence.m; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		330CBA4F1FF36E39001FD41C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				338277671FF930B50077F5F4 /* CocoaSwift */,
+				338277671FF930B50077F5F4 /* CocoaSwift.h */,
 				330CBA481FF36DC4001FD41C /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -189,7 +189,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338277681FF930B50077F5F4 /* CocoaSwift in Headers */,
+				338277771FF94A960077F5F4 /* meta in Headers */,
+				338277781FF94A960077F5F4 /* log in Headers */,
+				3382777A1FF94A960077F5F4 /* Extension in Headers */,
+				3382777D1FF94A960077F5F4 /* Array in Headers */,
+				3382777B1FF94A960077F5F4 /* Sequence in Headers */,
+				3382777F1FF94A960077F5F4 /* Array.Sequence in Headers */,
+				338277761FF94A960077F5F4 /* swift in Headers */,
+				3382777C1FF94A960077F5F4 /* Type in Headers */,
+				338277681FF930B50077F5F4 /* CocoaSwift.h in Headers */,
+				338277791FF94A960077F5F4 /* Protocol in Headers */,
+				3382777E1FF94A960077F5F4 /* Array.Type in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +207,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338277691FF930B50077F5F4 /* CocoaSwift in Headers */,
+				338277811FF94A970077F5F4 /* meta in Headers */,
+				338277821FF94A970077F5F4 /* log in Headers */,
+				338277841FF94A970077F5F4 /* Extension in Headers */,
+				338277871FF94A970077F5F4 /* Array in Headers */,
+				338277831FF94A970077F5F4 /* Protocol in Headers */,
+				338277851FF94A970077F5F4 /* Sequence in Headers */,
+				338277891FF94A970077F5F4 /* Array.Sequence in Headers */,
+				338277801FF94A970077F5F4 /* swift in Headers */,
+				338277861FF94A970077F5F4 /* Type in Headers */,
+				338277691FF930B50077F5F4 /* CocoaSwift.h in Headers */,
+				338277881FF94A970077F5F4 /* Array.Type in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,16 +304,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338277491FF92F520077F5F4 /* Array.Type in Resources */,
-				3382775A1FF9305D0077F5F4 /* meta in Resources */,
-				338277631FF930930077F5F4 /* Sequence in Resources */,
-				3382775C1FF9305D0077F5F4 /* swift in Resources */,
-				3382774D1FF92F520077F5F4 /* Array in Resources */,
-				338277611FF930930077F5F4 /* Extension in Resources */,
-				338277581FF9305D0077F5F4 /* log in Resources */,
-				338277651FF930930077F5F4 /* Protocol in Resources */,
-				3382774B1FF92F520077F5F4 /* Array.Sequence in Resources */,
-				338277441FF92F3D0077F5F4 /* Type in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,16 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3382774A1FF92F520077F5F4 /* Array.Type in Resources */,
-				3382775B1FF9305D0077F5F4 /* meta in Resources */,
-				338277641FF930930077F5F4 /* Sequence in Resources */,
-				3382775D1FF9305D0077F5F4 /* swift in Resources */,
-				3382774E1FF92F520077F5F4 /* Array in Resources */,
-				338277621FF930930077F5F4 /* Extension in Resources */,
-				338277591FF9305D0077F5F4 /* log in Resources */,
-				338277661FF930930077F5F4 /* Protocol in Resources */,
-				3382774C1FF92F520077F5F4 /* Array.Sequence in Resources */,
-				338277451FF92F3D0077F5F4 /* Type in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
