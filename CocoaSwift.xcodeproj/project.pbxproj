@@ -160,6 +160,7 @@
 			children = (
 				338277511FF9304C0077F5F4 /* Meta */,
 				338277501FF92FEA0077F5F4 /* Protocol */,
+				338277421FF92F1E0077F5F4 /* Type */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -192,7 +193,6 @@
 				3382776D1FF930F00077F5F4 /* Extension.cpp */,
 				3382775F1FF930930077F5F4 /* Sequence */,
 				338277701FF937080077F5F4 /* Sequence.m */,
-				338277421FF92F1E0077F5F4 /* Type */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
