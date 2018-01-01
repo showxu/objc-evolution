@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-namespace CocoaSwift::Protocol {
+namespace cocoaswift::protocol {
 
 struct Extension {
 #   define CONSTRUCTOR_PRIORITY 100
@@ -127,7 +127,7 @@ var Extension::extensions = (Extension *)NULL;
     
 }
 
-using namespace CocoaSwift::Protocol;
+using namespace cocoaswift::protocol;
 
 void protocol_load_extention(Protocol *p, Class cls) {
     var ext = (Extension) {
