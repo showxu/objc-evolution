@@ -16,23 +16,25 @@ _Pragma("once")
 
 _Pragma("clang assume_nonnull begin")
 
-_Pragma("clang diagnostic push")
-_Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
-
 #define forEach(element, collection) \
     for (typeof((collection).enumeratedType) element in (collection))
 
 
 @protocol FastEnumeration <NSFastEnumeration>
 
+@optional
 @property (nonatomic, readonly) id enumeratedType;
 
 - (id)enumeratedType __attribute__((noreturn));
 
 @end
 
-__attribute__((objc_runtime_name("__Sequence__")))
+
+__attribute__((objc_runtime_name("Sequence")))
 @protocol Sequence
+
+_Pragma("clang diagnostic push")
+_Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 
 /// Returns an array containing the results of mapping the given closure
 /// over the sequence's elements.

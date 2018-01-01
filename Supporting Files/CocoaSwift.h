@@ -13,7 +13,7 @@
 extern "C" {
 #endif
 //! Project version number for CocoaSwift.
-extern "C" extern double CocoaSwiftVersionNumber;
+extern double CocoaSwiftVersionNumber;
 
 //! Project version string for CocoaSwift.
 extern const unsigned char CocoaSwiftVersionString[];

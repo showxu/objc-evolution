@@ -105,14 +105,14 @@ private:
             count = 0;
             capacity = 0;
         };
-        var count = (unsigned)0;
-        let cls_list = objc_copyClassList(&count);
+        var cls_count = (unsigned)0;
+        let cls_list = objc_copyClassList(&cls_count);
         defer {
             free(cls_list);
         };
         for (var ext_i = 0; ext_i < count; ++ext_i) {
             var ext = extensions[ext_i];
-            for (var cls_i = 0; cls_i < count; ++cls_i) {
+            for (var cls_i = 0; cls_i < cls_count; ++cls_i) {
                 if (let cls = cls_list[cls_i]; class_conformsToProtocol(cls, ext.protocol)) {
                     ext.initialize(cls);
                 }

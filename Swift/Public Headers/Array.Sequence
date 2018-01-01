@@ -14,8 +14,6 @@ _Pragma("clang assume_nonnull begin")
 
 @interface Array<T>(FastEnumeration) <FastEnumeration>
 
-- (T)enumeratedType;
-
 @end
 
 

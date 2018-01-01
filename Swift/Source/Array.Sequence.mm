@@ -10,6 +10,10 @@
 
 _Pragma("clang assume_nonnull begin")
 
+@implementation Array (FastEnumeration)
+
+@end
+
 @implementation Array (Sequence)
 
 - (Array * (^)(id (^)(id)))map {
