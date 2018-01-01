@@ -13,8 +13,8 @@
 		3382776C1FF930D00077F5F4 /* Array.Sequence.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3382776A1FF930D00077F5F4 /* Array.Sequence.mm */; };
 		3382776E1FF930F00077F5F4 /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3382776D1FF930F00077F5F4 /* Extension.cpp */; };
 		3382776F1FF930F00077F5F4 /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3382776D1FF930F00077F5F4 /* Extension.cpp */; };
-		338277711FF937080077F5F4 /* Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277701FF937080077F5F4 /* Sequence.m */; };
-		338277721FF937080077F5F4 /* Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277701FF937080077F5F4 /* Sequence.m */; };
+		338277711FF937080077F5F4 /* Sequence.mm in Sources */ = {isa = PBXBuildFile; fileRef = 338277701FF937080077F5F4 /* Sequence.mm */; };
+		338277721FF937080077F5F4 /* Sequence.mm in Sources */ = {isa = PBXBuildFile; fileRef = 338277701FF937080077F5F4 /* Sequence.mm */; };
 		338277761FF94A960077F5F4 /* swift in Headers */ = {isa = PBXBuildFile; fileRef = 338277551FF9305D0077F5F4 /* swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		338277771FF94A960077F5F4 /* meta in Headers */ = {isa = PBXBuildFile; fileRef = 338277541FF9305D0077F5F4 /* meta */; settings = {ATTRIBUTES = (Public, ); }; };
 		338277781FF94A960077F5F4 /* log in Headers */ = {isa = PBXBuildFile; fileRef = 338277531FF9305C0077F5F4 /* log */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,7 +74,7 @@
 		338277671FF930B50077F5F4 /* CocoaSwift.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = CocoaSwift.h; sourceTree = "<group>"; };
 		3382776A1FF930D00077F5F4 /* Array.Sequence.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Array.Sequence.mm; path = Source/Array.Sequence.mm; sourceTree = "<group>"; };
 		3382776D1FF930F00077F5F4 /* Extension.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Extension.cpp; path = Source/Extension.cpp; sourceTree = "<group>"; };
-		338277701FF937080077F5F4 /* Sequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Sequence.m; path = Source/Sequence.m; sourceTree = "<group>"; };
+		338277701FF937080077F5F4 /* Sequence.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = Sequence.mm; path = Source/Sequence.mm; sourceTree = "<group>"; };
 		3382778E1FF951690077F5F4 /* CocoaSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338277901FF951690077F5F4 /* CocoaSwiftTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSwiftTests.m; sourceTree = "<group>"; };
 		3382779C1FF952780077F5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		330CBA3A1FF36DC4001FD41C = {
 			isa = PBXGroup;
 			children = (
-				338277111FF92DA90077F5F4 /* Swift */,
+				338277111FF92DA90077F5F4 /* CocoaSwift */,
 				3311FBD81FF37A6300DBEB0B /* Config */,
 				330CBA4F1FF36E39001FD41C /* Supporting Files */,
 				3311FBCE1FF373E000DBEB0B /* Deployment */,
@@ -158,14 +158,14 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		338277111FF92DA90077F5F4 /* Swift */ = {
+		338277111FF92DA90077F5F4 /* CocoaSwift */ = {
 			isa = PBXGroup;
 			children = (
 				338277511FF9304C0077F5F4 /* Meta */,
 				338277501FF92FEA0077F5F4 /* Protocol */,
 				338277421FF92F1E0077F5F4 /* Type */,
 			);
-			path = Swift;
+			path = CocoaSwift;
 			sourceTree = "<group>";
 		};
 		338277421FF92F1E0077F5F4 /* Type */ = {
@@ -196,7 +196,7 @@
 				3382776D1FF930F00077F5F4 /* Extension.cpp */,
 				33F5AF341FFA1CCA00296338 /* IteratorProtocol */,
 				3382775F1FF930930077F5F4 /* Sequence */,
-				338277701FF937080077F5F4 /* Sequence.m */,
+				338277701FF937080077F5F4 /* Sequence.mm */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 			files = (
 				3382776B1FF930D00077F5F4 /* Array.Sequence.mm in Sources */,
 				3382776E1FF930F00077F5F4 /* Extension.cpp in Sources */,
-				338277711FF937080077F5F4 /* Sequence.m in Sources */,
+				338277711FF937080077F5F4 /* Sequence.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +411,7 @@
 			files = (
 				3382776C1FF930D00077F5F4 /* Array.Sequence.mm in Sources */,
 				3382776F1FF930F00077F5F4 /* Extension.cpp in Sources */,
-				338277721FF937080077F5F4 /* Sequence.m in Sources */,
+				338277721FF937080077F5F4 /* Sequence.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

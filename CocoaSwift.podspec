@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   fmwk_name = 'CocoaSwift'
-  src_root = fmwk_name + '/Swift/'
+  src_root = fmwk_name + '/CocoaSwift/'
   prefix_header_path = src_root + 'Public Headers/swift.h'
   public_header_path = src_root + 'Public Headers/*'
   src_file_path = src_root + 'Source/*.{h,c,hpp,cpp,m,mm,swift}}'
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.exclude_files = prefix_header_path
 
   s.pod_target_xcconfig = {
-    'GCC_PREFIX_HEADER' => 'CocoaSwift/Swift/Public Headers/swift.h',
+    'GCC_PREFIX_HEADER' => prefix_header_path,
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
   }
 end
