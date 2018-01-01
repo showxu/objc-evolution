@@ -37,6 +37,8 @@
 		338277891FF94A970077F5F4 /* Array.Sequence in Headers */ = {isa = PBXBuildFile; fileRef = 338277471FF92F520077F5F4 /* Array.Sequence */; settings = {ATTRIBUTES = (Public, ); }; };
 		338277911FF951690077F5F4 /* CocoaSwiftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277901FF951690077F5F4 /* CocoaSwiftTests.m */; };
 		338277931FF951690077F5F4 /* CocoaSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330CBA441FF36DC4001FD41C /* CocoaSwift.framework */; };
+		33F5AF391FFA1CE800296338 /* IteratorProtocol in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF341FFA1CCA00296338 /* IteratorProtocol */; settings = {ATTRIBUTES = (Public, ); }; };
+		33F5AF3A1FFA1CE900296338 /* IteratorProtocol in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF341FFA1CCA00296338 /* IteratorProtocol */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		3382778E1FF951690077F5F4 /* CocoaSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338277901FF951690077F5F4 /* CocoaSwiftTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSwiftTests.m; sourceTree = "<group>"; };
 		3382779C1FF952780077F5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F5AF341FFA1CCA00296338 /* IteratorProtocol */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = IteratorProtocol; path = "Public Headers/IteratorProtocol"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,7 @@
 				338277601FF930930077F5F4 /* Protocol */,
 				3382775E1FF930930077F5F4 /* Extension */,
 				3382776D1FF930F00077F5F4 /* Extension.cpp */,
+				33F5AF341FFA1CCA00296338 /* IteratorProtocol */,
 				3382775F1FF930930077F5F4 /* Sequence */,
 				338277701FF937080077F5F4 /* Sequence.m */,
 			);
@@ -235,6 +239,7 @@
 				338277781FF94A960077F5F4 /* log in Headers */,
 				3382777A1FF94A960077F5F4 /* Extension in Headers */,
 				3382777D1FF94A960077F5F4 /* Array in Headers */,
+				33F5AF391FFA1CE800296338 /* IteratorProtocol in Headers */,
 				3382777B1FF94A960077F5F4 /* Sequence in Headers */,
 				3382777F1FF94A960077F5F4 /* Array.Sequence in Headers */,
 				338277761FF94A960077F5F4 /* swift in Headers */,
@@ -253,6 +258,7 @@
 				338277821FF94A970077F5F4 /* log in Headers */,
 				338277841FF94A970077F5F4 /* Extension in Headers */,
 				338277871FF94A970077F5F4 /* Array in Headers */,
+				33F5AF3A1FFA1CE900296338 /* IteratorProtocol in Headers */,
 				338277831FF94A970077F5F4 /* Protocol in Headers */,
 				338277851FF94A970077F5F4 /* Sequence in Headers */,
 				338277891FF94A970077F5F4 /* Array.Sequence in Headers */,

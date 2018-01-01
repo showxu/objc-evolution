@@ -10,11 +10,25 @@
 
 _Pragma("clang assume_nonnull begin")
 
-@implementation Array (FastEnumeration)
-
-@end
-
 @implementation Array (Sequence)
+
+@dynamic Element;
+
++ (id<IteratorProtocol>)Iterator {
+    return nil;
+}
+
++ (id)SubSequence {
+    return nil;
+}
+
+- (id<IteratorProtocol> (^)(void))makeIterator {
+    return nil;
+}
+
+- (int)underestimatedCount {
+    return 0;
+}
 
 - (Array * (^)(id (^)(id)))map {
     return ^id(id (^transform)(id)){

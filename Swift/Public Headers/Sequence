@@ -10,24 +10,15 @@ _Pragma("once")
 #ifdef __OBJC__
 
 #import <objc/objc.h>
+#import "IteratorProtocol"
 
 @protocol NSFastEnumeration;
 @class NSArray;
 
 _Pragma("clang assume_nonnull begin")
 
-#define forEach(element, collection) \
-    for (typeof((collection).enumeratedType) element in (collection))
-
-
-@protocol FastEnumeration <NSFastEnumeration>
-
-@optional
-@property (nonatomic, readonly) id enumeratedType;
-
-- (id)enumeratedType __attribute__((noreturn));
-
-@end
+#define forEach($ELEMENT, $SEQUENCE) \
+    for (typeof(($SEQUENCE).Element) $ELEMENT in ($SEQUENCE))
 
 
 __attribute__((objc_runtime_name("Sequence")))
@@ -35,6 +26,30 @@ __attribute__((objc_runtime_name("Sequence")))
 
 _Pragma("clang diagnostic push")
 _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
+
+/// A type representing the sequence's elements.
+@property (class, nonatomic, nonnull, readonly) id Element;
+    //associatedtype Element where Self.Element == Self.Iterator.Element
+
+/// A type that provides the sequence's iteration interface and
+/// encapsulates its iteration state.
+@property (class, nonatomic, nonnull, readonly) id<IteratorProtocol> Iterator;
+    // associatedtype Iterator : IteratorProtocol
+
+/// A type that represents a subsequence of some of the sequence's elements.
+@property (class, nonatomic, nonnull, readonly) id SubSequence;
+    // associatedtype SubSequence
+
+/// Returns an iterator over the elements of this sequence.
+- (id<IteratorProtocol> (^)(void))makeIterator;
+   // public func makeIterator() -> Self.Iterator
+
+/// A value less than or equal to the number of elements in
+/// the sequence, calculated nondestructively.
+///
+/// - Complexity: O(1)
+@property (nonatomic, readonly) int underestimatedCount;
+    // public var underestimatedCount: Int { get }
 
 /// Returns an array containing the results of mapping the given closure
 /// over the sequence's elements.
@@ -54,6 +69,7 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 /// - Returns: An array containing the transformed elements of this
 ///   sequence.
 - (NSArray *(^)(__attribute__((noescape)) id (^transform)()))map;
+    // public func map<T>(_ transform: (Self.Element) throws -> T) rethrows -> [T]
 
 /// Returns an array containing, in order, the elements of the sequence
 /// that satisfy the given predicate.
@@ -71,6 +87,7 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   whether the element should be included in the returned array.
 /// - Returns: An array of the elements that `isIncluded` allowed.
 - (NSArray *(^)(__attribute__((noescape)) BOOL (^isIncluded)()))filter;
+    // public func filter(_ isIncluded: (Self.Element) throws -> Bool) rethrows -> [Self.Element]
 
 /// Calls the given closure on each element in the sequence in the same order
 /// as a `for`-`in` loop.
@@ -102,6 +119,7 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 /// - Parameter body: A closure that takes an element of the sequence as a
 ///   parameter.
 - (NSArray *(^)(__attribute__((noescape)) void (^body)()))forEach;
+    // public func forEach(_ body: (Self.Element) throws -> Swift.Void) rethrows
 
 /// Returns a subsequence containing all but the given number of initial
 /// elements.
@@ -122,7 +140,8 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///
 /// - Complexity: O(*n*), where *n* is the number of elements to drop from
 ///   the beginning of the sequence.
-//public func dropFirst(_ n: Int) -> Self.SubSequence
+- (id (^)(int n))dropFirst;
+    // public func dropFirst(_ n: Int) -> Self.SubSequence
 
 /// Returns a subsequence containing all but the specified number of final
 /// elements.
@@ -142,7 +161,8 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 /// - Returns: A subsequence leaving off the specified number of elements.
 ///
 /// - Complexity: O(*n*), where *n* is the length of the sequence.
-//public func dropLast(_ n: Int) -> Self.SubSequence
+- (id (^)(int n))dropLast;
+    // public func dropLast(_ n: Int) -> Self.SubSequence
 
 /// Returns a subsequence by skipping elements while `predicate` returns
 /// `true` and returning the remaining elements.
@@ -152,7 +172,8 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   whether the element is a match.
 ///
 /// - Complexity: O(*n*), where *n* is the length of the collection.
-//public func drop(while predicate: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+- (id (^)(BOOL (^predicate)(id Element)))dropWhile;
+    // public func drop(while predicate: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
 
 /// Returns a subsequence, up to the specified maximum length, containing
 /// the initial elements of the sequence.
@@ -170,7 +191,8 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   `maxLength` must be greater than or equal to zero.
 /// - Returns: A subsequence starting at the beginning of this sequence
 ///   with at most `maxLength` elements.
-//public func prefix(_ maxLength: Int) -> Self.SubSequence
+- (id (^)(int maxLength))prefix;
+    // public func prefix(_ maxLength: Int) -> Self.SubSequence
 
 /// Returns a subsequence containing the initial, consecutive elements that
 /// satisfy the given predicate.
@@ -194,7 +216,8 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   satisfy `predicate`.
 ///
 /// - Complexity: O(*n*), where *n* is the length of the collection.
-//public func prefix(while predicate: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
+- (id (^)(BOOL (^predicate)(id Element)))prefixWhile;
+    // public func prefix(while predicate: (Self.Element) throws -> Bool) rethrows -> Self.SubSequence
 
 /// Returns a subsequence, up to the given maximum length, containing the
 /// final elements of the sequence.
@@ -215,7 +238,8 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   at most `maxLength` elements.
 ///
 /// - Complexity: O(*n*), where *n* is the length of the sequence.
-//public func suffix(_ maxLength: Int) -> Self.SubSequence
+- (id (^)(int maxLength))suffix;
+    // public func suffix(_ maxLength: Int) -> Self.SubSequence
 
 /// Returns the longest possible subsequences of the sequence, in order, that
 /// don't contain elements satisfying the given predicate.
@@ -266,11 +290,11 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   - isSeparator: A closure that returns `true` if its argument should be
 ///     used to split the sequence; otherwise, `false`.
 /// - Returns: An array of subsequences, split from this sequence's elements.
-//public func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator isSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
-
-@end
+- (NSArray<id> * (^)(int maxSplits, BOOL omittingEmptySubsequences, BOOL (^isSeparator)(id Element)))splitWhereSeparator;
+    // public func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator isSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
 
 _Pragma("clang diagnostic pop")
+@end
 
 _Pragma("clang assume_nonnull end")
 

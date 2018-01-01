@@ -6,14 +6,13 @@
 //  Copyright © 2017年 alchemistxxd. All rights reserved.
 //
 
-#import <Foundation/NSObject.h>
 #import <Foundation/NSEnumerator.h>
 #import "Sequence"
 #import "Extension"
 
-@extension(FastEnumeration)
+@extension(Sequence)
 
-- (id)enumeratedType {
++ (id)Element {
     return nil;
 }
 

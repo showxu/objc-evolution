@@ -28,6 +28,8 @@ _Pragma("once")
 #define extension_specific($PROTOCOL, $CLASS)   \
     _Pragma("clang diagnostic push")    \
     _Pragma("clang diagnostic ignored \"-Wprotocol\"")  \
+    _Pragma("clang diagnostic ignored \"-Wobjc-property-implementation\"")  \
+    _Pragma("clang diagnostic ignored \"-Wobjc-protocol-property-synthesis\"")  \
     protocol $PROTOCOL; \
     \
     @interface $CLASS : NSObject <$PROTOCOL> @end   \

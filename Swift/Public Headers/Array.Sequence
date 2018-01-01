@@ -12,12 +12,17 @@ _Pragma("once")
 
 _Pragma("clang assume_nonnull begin")
 
-@interface Array<T>(FastEnumeration) <FastEnumeration>
-
-@end
-
-
 @interface Array<T>(Sequence) <Sequence>
+
+@property (class, nonatomic, nonnull, readonly) T Element;
+
+@property (class, nonatomic, nonnull, readonly) id<IteratorProtocol> Iterator;
+
+@property (class, nonatomic, nonnull, readonly) id SubSequence;
+
+- (id<IteratorProtocol> (^)(void))makeIterator;
+
+@property (nonatomic, readonly) int underestimatedCount;
 
 - (__nullable T (^)(BOOL (^by)(T x, T y)))min;
 

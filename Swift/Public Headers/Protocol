@@ -8,5 +8,6 @@
 _Pragma("once")
 
 #import "Extension"
+#import "IteratorProtocol"
 #import "Sequence"
 

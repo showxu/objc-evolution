@@ -26,7 +26,7 @@
 
 - (void)testExtension {
     // stub enumeratedType
-    (void)Array.alloc.init.enumeratedType;
+    (void)Array.Element;
 }
 
 - (void)testPerformanceExample {
