@@ -65,26 +65,25 @@ private:
     
     static inline void initialize(::Protocol *protocol, ::Class associated_class, ::Class cls) {
         let is_meta = class_isMetaClass(cls);
-        
-        if (var count = (unsigned int)0; let methods = class_copyMethodList(associated_class, &count)) {
-            defer {
-                free(methods);
-            };
-            for (var i = 0; i < count; ++i) {
-                let method = methods[i];
-                let sel = method_getName(method);
-                if (sel == sel_getUid("initialize") || sel == sel_getUid("load")) {
-                    continue;
-                }
-                if (class_getInstanceMethod(cls, sel)) {
-                    continue;
-                }
-                let imp = method_getImplementation(method);
-                let types = method_getTypeEncoding(method);
-                if (!class_addMethod(cls, sel, imp, types)) {
-                    fprintf(stderr, "ERROR: Could not add instance method -%s from protocol %s on class %s\n",
-                            sel_getName(sel), protocol_getName(protocol), class_getName(cls));
-                }
+        var count = (unsigned int)0;
+        let methods = class_copyMethodList(associated_class, &count);
+        defer {
+            free(methods);
+        };
+        for (var i = 0; i < count; ++i) {
+            let method = methods[i];
+            let sel = method_getName(method);
+            if (sel == sel_getUid("initialize") || sel == sel_getUid("load")) {
+                continue;
+            }
+            if (class_getInstanceMethod(cls, sel)) {
+                continue;
+            }
+            let imp = method_getImplementation(method);
+            let types = method_getTypeEncoding(method);
+            if (!class_addMethod(cls, sel, imp, types)) {
+                fprintf(stderr, "ERROR: Could not add instance method -%s from protocol %s on class %s\n",
+                        sel_getName(sel), protocol_getName(protocol), class_getName(cls));
             }
         }
         if (!is_meta) {
@@ -137,3 +136,4 @@ void protocol_load_extention(Protocol *p, Class cls) {
     };
     ext.load();
 }
+
