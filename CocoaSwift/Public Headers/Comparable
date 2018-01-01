@@ -8,6 +8,10 @@
 
 _Pragma("once")
 
+#ifdef __OBJC__
+#import "Equatable"
+_Pragma("clang assume_nonnull begin")
+
 /// A type that can be compared using the relational operators `<`, `<=`, `>=`,
 /// and `>`.
 ///
@@ -133,41 +137,52 @@ _Pragma("once")
 ///   (`FloatingPoint.nan`) compares as neither less than, greater than, nor
 ///   equal to any normal floating-point value. Exceptional values need not
 ///   take part in the strict total order.
-@protocol Comparable : Equatable {
-    
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is less than that of the second argument.
-    ///
-    /// This function is the only requirement of the `Comparable` protocol. The
-    /// remainder of the relational operator functions are implemented by the
-    /// standard library for any type that conforms to `Comparable`.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    public static func <(lhs: Self, rhs: Self) -> Bool
-    
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is less than or equal to that of the second argument.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    public static func <=(lhs: Self, rhs: Self) -> Bool
-    
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is greater than or equal to that of the second argument.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    public static func >=(lhs: Self, rhs: Self) -> Bool
-    
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is greater than that of the second argument.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    public static func >(lhs: Self, rhs: Self) -> Bool
-}
+@protocol Comparable <Equatable>
+
+@required
+/// Returns a Boolean value indicating whether the value of the first
+/// argument is less than that of the second argument.
+///
+/// This function is the only requirement of the `Comparable` protocol. The
+/// remainder of the relational operator functions are implemented by the
+/// standard library for any type that conforms to `Comparable`.
+///
+/// - Parameters:
+///   - lhs: A value to compare.
+///   - rhs: Another value to compare.
++ (BOOL (^)(id lhs, id rhs))lessThan; // FIXME: operator override (<)
+    // public static func <(lhs: Self, rhs: Self) -> Bool
+
+@optional
+/// Returns a Boolean value indicating whether the value of the first
+/// argument is less than or equal to that of the second argument.
+///
+/// - Parameters:
+///   - lhs: A value to compare.
+///   - rhs: Another value to compare.
++ (BOOL (^)(id lhs, id rhs))lessThanOrEqualTo; // FIXME: operator override (<=)
+    // public static func <=(lhs: Self, rhs: Self) -> Bool
+
+/// Returns a Boolean value indicating whether the value of the first
+/// argument is greater than or equal to that of the second argument.
+///
+/// - Parameters:
+///   - lhs: A value to compare.
+///   - rhs: Another value to compare.
++ (BOOL (^)(id lhs, id rhs))greaterThanOrEqualTo; // FIXME: operator override (>=)
+    // public static func >=(lhs: Self, rhs: Self) -> Bool
+
+/// Returns a Boolean value indicating whether the value of the first
+/// argument is greater than that of the second argument.
+///
+/// - Parameters:
+///   - lhs: A value to compare.
+///   - rhs: Another value to compare.
++ (BOOL (^)(id lhs, id rhs))greaterThan; // FIXME: operator override (>)
+    // public static func >(lhs: Self, rhs: Self) -> Bool
+
+@end
+
+_Pragma("clang assume_nonnull end")
+#endif
+

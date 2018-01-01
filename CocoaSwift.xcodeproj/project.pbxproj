@@ -45,6 +45,8 @@
 		33F5AF411FFA4BDB00296338 /* Equatable in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF3F1FFA4BDB00296338 /* Equatable */; settings = {ATTRIBUTES = (Public, ); }; };
 		33F5AF431FFA4C8B00296338 /* Equatable.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F5AF421FFA4C8B00296338 /* Equatable.m */; };
 		33F5AF441FFA4C8B00296338 /* Equatable.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F5AF421FFA4C8B00296338 /* Equatable.m */; };
+		33F5AF461FFA5D0800296338 /* Comparable.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33F5AF451FFA5D0800296338 /* Comparable.mm */; };
+		33F5AF471FFA5D0800296338 /* Comparable.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33F5AF451FFA5D0800296338 /* Comparable.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,7 @@
 		33F5AF3C1FFA4B7A00296338 /* Comparable */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; name = Comparable; path = "Public Headers/Comparable"; sourceTree = "<group>"; };
 		33F5AF3F1FFA4BDB00296338 /* Equatable */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; name = Equatable; path = "Public Headers/Equatable"; sourceTree = "<group>"; };
 		33F5AF421FFA4C8B00296338 /* Equatable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Equatable.m; path = Source/Equatable.m; sourceTree = "<group>"; };
+		33F5AF451FFA5D0800296338 /* Comparable.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = Comparable.mm; path = Source/Comparable.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,10 +206,11 @@
 				338277601FF930930077F5F4 /* Protocol */,
 				3382775E1FF930930077F5F4 /* Extension */,
 				3382776D1FF930F00077F5F4 /* Extension.cpp */,
-				33F5AF341FFA1CCA00296338 /* IteratorProtocol */,
-				33F5AF3C1FFA4B7A00296338 /* Comparable */,
 				33F5AF3F1FFA4BDB00296338 /* Equatable */,
 				33F5AF421FFA4C8B00296338 /* Equatable.m */,
+				33F5AF3C1FFA4B7A00296338 /* Comparable */,
+				33F5AF451FFA5D0800296338 /* Comparable.mm */,
+				33F5AF341FFA1CCA00296338 /* IteratorProtocol */,
 				3382775F1FF930930077F5F4 /* Sequence */,
 				338277701FF937080077F5F4 /* Sequence.mm */,
 			);
@@ -418,6 +422,7 @@
 				3382776B1FF930D00077F5F4 /* Array.Sequence.mm in Sources */,
 				3382776E1FF930F00077F5F4 /* Extension.cpp in Sources */,
 				33F5AF431FFA4C8B00296338 /* Equatable.m in Sources */,
+				33F5AF461FFA5D0800296338 /* Comparable.mm in Sources */,
 				338277711FF937080077F5F4 /* Sequence.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +434,7 @@
 				3382776C1FF930D00077F5F4 /* Array.Sequence.mm in Sources */,
 				3382776F1FF930F00077F5F4 /* Extension.cpp in Sources */,
 				33F5AF441FFA4C8B00296338 /* Equatable.m in Sources */,
+				33F5AF471FFA5D0800296338 /* Comparable.mm in Sources */,
 				338277721FF937080077F5F4 /* Sequence.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

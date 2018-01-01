@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016年 0xxd0. All rights reserved.</string>
+	<string>Copyright (c) 2016 0xxd0. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>

@@ -8,6 +8,12 @@
 _Pragma("once")
 
 #ifdef __OBJC__
+#import <objc/objc.h>
+_Pragma("clang assume_nonnull begin")
+
+//===----------------------------------------------------------------------===//
+// Equatable
+//===----------------------------------------------------------------------===//
 
 /// A type that can be compared for value equality.
 ///
@@ -149,7 +155,8 @@ _Pragma("once")
 ///     print(a === c, b === c, separator: ", ")
 ///     // Prints "true, false"
 @protocol Equatable // FIXME: operator override (==)
-    
+
+@required
 /// Returns a Boolean value indicating whether two values are equal.
 ///
 /// Equality is the inverse of inequality. For any values `a` and `b`,
@@ -158,7 +165,6 @@ _Pragma("once")
 /// - Parameters:
 ///   - lhs: A value to compare.
 ///   - rhs: Another value to compare.
-@required
 + (BOOL (^)(id lhs, id rhs))isEqual;
     // public static func ==(lhs: Self, rhs: Self) -> Bool
 
@@ -183,6 +189,9 @@ _Pragma("once")
 
 @end
 
-// FIXME: Reference comparison, operator override (===)
-
+// FIXME: Reference comparison
+//===----------------------------------------------------------------------===//
+// Reference comparison
+//===----------------------------------------------------------------------===//
+_Pragma("clang assume_nonnull end")
 #endif

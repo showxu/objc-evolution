@@ -9,11 +9,11 @@
 _Pragma("once")
 
 #ifdef __OBJC__
+_Pragma("clang assume_nonnull begin")
 
 @compatibility_alias Element NSObject;
 
 @protocol IteratorProtocol
-_Pragma("clang assume_nonnull begin")
 
 /// The type of element traversed by the iterator.
 @property (class, nonatomic, nonnull, readonly) id Element;
@@ -47,7 +47,7 @@ _Pragma("clang assume_nonnull begin")
 ///   exists; otherwise, `nil`.
 - (Element * _Nullable (^)(void))next;
 
-_Pragma("clang assume_nonnull end")
 @end
 
+_Pragma("clang assume_nonnull end")
 #endif
