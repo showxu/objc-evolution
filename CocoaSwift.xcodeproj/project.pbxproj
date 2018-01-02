@@ -37,8 +37,6 @@
 		338277891FF94A970077F5F4 /* Array.Sequence in Headers */ = {isa = PBXBuildFile; fileRef = 338277471FF92F520077F5F4 /* Array.Sequence */; settings = {ATTRIBUTES = (Public, ); }; };
 		338277911FF951690077F5F4 /* CocoaSwiftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277901FF951690077F5F4 /* CocoaSwiftTests.m */; };
 		338277931FF951690077F5F4 /* CocoaSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330CBA441FF36DC4001FD41C /* CocoaSwift.framework */; };
-		33F5AF391FFA1CE800296338 /* IteratorProtocol in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF341FFA1CCA00296338 /* IteratorProtocol */; settings = {ATTRIBUTES = (Public, ); }; };
-		33F5AF3A1FFA1CE900296338 /* IteratorProtocol in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF341FFA1CCA00296338 /* IteratorProtocol */; settings = {ATTRIBUTES = (Public, ); }; };
 		33F5AF3D1FFA4B7A00296338 /* Comparable in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF3C1FFA4B7A00296338 /* Comparable */; settings = {ATTRIBUTES = (Public, ); }; };
 		33F5AF3E1FFA4B7A00296338 /* Comparable in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF3C1FFA4B7A00296338 /* Comparable */; settings = {ATTRIBUTES = (Public, ); }; };
 		33F5AF401FFA4BDB00296338 /* Equatable in Headers */ = {isa = PBXBuildFile; fileRef = 33F5AF3F1FFA4BDB00296338 /* Equatable */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,7 +84,6 @@
 		3382778E1FF951690077F5F4 /* CocoaSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338277901FF951690077F5F4 /* CocoaSwiftTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSwiftTests.m; sourceTree = "<group>"; };
 		3382779C1FF952780077F5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33F5AF341FFA1CCA00296338 /* IteratorProtocol */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = IteratorProtocol; path = "Public Headers/IteratorProtocol"; sourceTree = "<group>"; };
 		33F5AF3C1FFA4B7A00296338 /* Comparable */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; name = Comparable; path = "Public Headers/Comparable"; sourceTree = "<group>"; };
 		33F5AF3F1FFA4BDB00296338 /* Equatable */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; name = Equatable; path = "Public Headers/Equatable"; sourceTree = "<group>"; };
 		33F5AF421FFA4C8B00296338 /* Equatable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Equatable.m; path = Source/Equatable.m; sourceTree = "<group>"; };
@@ -210,7 +207,6 @@
 				33F5AF421FFA4C8B00296338 /* Equatable.m */,
 				33F5AF3C1FFA4B7A00296338 /* Comparable */,
 				33F5AF451FFA5D0800296338 /* Comparable.mm */,
-				33F5AF341FFA1CCA00296338 /* IteratorProtocol */,
 				3382775F1FF930930077F5F4 /* Sequence */,
 				338277701FF937080077F5F4 /* Sequence.mm */,
 			);
@@ -255,7 +251,6 @@
 				338277781FF94A960077F5F4 /* log in Headers */,
 				3382777A1FF94A960077F5F4 /* Extension in Headers */,
 				3382777D1FF94A960077F5F4 /* Array in Headers */,
-				33F5AF391FFA1CE800296338 /* IteratorProtocol in Headers */,
 				3382777B1FF94A960077F5F4 /* Sequence in Headers */,
 				3382777F1FF94A960077F5F4 /* Array.Sequence in Headers */,
 				33F5AF401FFA4BDB00296338 /* Equatable in Headers */,
@@ -276,7 +271,6 @@
 				338277821FF94A970077F5F4 /* log in Headers */,
 				338277841FF94A970077F5F4 /* Extension in Headers */,
 				338277871FF94A970077F5F4 /* Array in Headers */,
-				33F5AF3A1FFA1CE900296338 /* IteratorProtocol in Headers */,
 				338277831FF94A970077F5F4 /* Protocol in Headers */,
 				338277851FF94A970077F5F4 /* Sequence in Headers */,
 				33F5AF411FFA4BDB00296338 /* Equatable in Headers */,

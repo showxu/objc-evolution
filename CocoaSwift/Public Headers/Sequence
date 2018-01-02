@@ -8,24 +8,56 @@
 _Pragma("once")
 
 #ifdef __OBJC__
-
 #import <objc/objc.h>
-#import "IteratorProtocol"
-
-@protocol NSFastEnumeration;
-@class NSArray;
 
 _Pragma("clang assume_nonnull begin")
 
-#define forEach($ELEMENT, $SEQUENCE) \
-    for (typeof(($SEQUENCE).Element) $ELEMENT in ($SEQUENCE))
+@protocol NSFastEnumeration;
 
+@protocol IteratorProtocol
 
-__attribute__((objc_runtime_name("Sequence")))
-@protocol Sequence
+@required
+/// The type of element traversed by the iterator.
+@property (class, nonatomic, nonnull, readonly) id Element;
+
+/// Advances to the next element and returns it, or `nil` if no next element
+/// exists.
+///
+/// Repeatedly calling this method returns, in order, all the elements of the
+/// underlying sequence. As soon as the sequence has run out of elements, all
+/// subsequent calls return `nil`.
+///
+/// You must not call this method if any other copy of this iterator has been
+/// advanced with a call to its `next()` method.
+///
+/// The following example shows how an iterator can be used explicitly to
+/// emulate a `for`-`in` loop. First, retrieve a sequence's iterator, and
+/// then call the iterator's `next()` method until it returns `nil`.
+///
+///     let numbers = [2, 3, 5, 7]
+///     var numbersIterator = numbers.makeIterator()
+///
+///     while let num = numbersIterator.next() {
+///         print(num)
+///     }
+///     // Prints "2"
+///     // Prints "3"
+///     // Prints "5"
+///     // Prints "7"
+///
+/// - Returns: The next element in the underlying sequence, if a next element
+///   exists; otherwise, `nil`.
+- (id _Nullable (^)(void))next;
+
+@end
+
+@class NSArray;
 
 _Pragma("clang diagnostic push")
 _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
+
+__attribute__((objc_runtime_name("Sequence")))
+@protocol Sequence <NSFastEnumeration>
 
 /// A type representing the sequence's elements.
 @property (class, nonatomic, nonnull, readonly) id Element;
@@ -37,7 +69,7 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
     // associatedtype Iterator : IteratorProtocol
 
 /// A type that represents a subsequence of some of the sequence's elements.
-@property (class, nonatomic, nonnull, readonly) id SubSequence;
+@property (class, nonatomic, nonnull, readonly) id<Sequence> SubSequence;
     // associatedtype SubSequence
 
 /// Returns an iterator over the elements of this sequence.
@@ -118,7 +150,7 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///
 /// - Parameter body: A closure that takes an element of the sequence as a
 ///   parameter.
-- (NSArray *(^)(__attribute__((noescape)) void (^body)()))forEach;
+- (void (^)(__attribute__((noescape)) void (^body)(id)))forEach;
     // public func forEach(_ body: (Self.Element) throws -> Swift.Void) rethrows
 
 /// Returns a subsequence containing all but the given number of initial
@@ -290,11 +322,14 @@ _Pragma("clang diagnostic ignored \"-Wstrict-prototypes\"")
 ///   - isSeparator: A closure that returns `true` if its argument should be
 ///     used to split the sequence; otherwise, `false`.
 /// - Returns: An array of subsequences, split from this sequence's elements.
-- (NSArray<id> * (^)(int maxSplits, BOOL omittingEmptySubsequences, BOOL (^isSeparator)(id Element)))splitWhereSeparator;
+- (NSArray * (^)(int maxSplits, BOOL omittingEmptySubsequences, BOOL (^isSeparator)(id Element)))splitWhereSeparator;
     // public func split(maxSplits: Int, omittingEmptySubsequences: Bool, whereSeparator isSeparator: (Self.Element) throws -> Bool) rethrows -> [Self.SubSequence]
 
-_Pragma("clang diagnostic pop")
 @end
+_Pragma("clang diagnostic pop")
+
+#define forEach($ELEMENT, $SEQUENCE) \
+    for (typeof(($SEQUENCE).class.Element) $ELEMENT in ($SEQUENCE))
 
 _Pragma("clang assume_nonnull end")
 

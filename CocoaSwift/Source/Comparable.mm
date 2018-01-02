@@ -5,7 +5,6 @@
 //  Copyright © 2017年 0xxd0. All rights reserved.
 //
 
-#import <objc/NSObject.h>
 #import "Extension"
 #import "Comparable"
 

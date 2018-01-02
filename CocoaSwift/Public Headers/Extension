@@ -10,6 +10,7 @@ _Pragma("once")
 #import <objc/runtime.h>
 
 #ifdef __OBJC__
+#import <objc/NSObject.h>
 
 /**
  Add default implementation to Protocol
