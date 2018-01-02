@@ -18,12 +18,12 @@
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id  _Nullable __unsafe_unretained [])buffer count:(NSUInteger)bufferLength {
     // Keep the iterator alive througth the enumeration
-    id<IteratorProtocol> (^getIterator)(void) = ^{
+    let getIterator = [state](void) -> id<IteratorProtocol> {
         return (__bridge id<IteratorProtocol>)(void *)state->extra[1];
     };
-    void (^setIterator)(id<IteratorProtocol>) = ^(id<IteratorProtocol> iterator) {
+    let setIterator = [state](id<IteratorProtocol> iterator) -> void {
         CFBridgingRelease((void *)state->state);
-        state->extra[1] = (unsigned long)CFBridgingRetain(iterator);
+        state->extra[1] = (unsigned long)(__bridge_retained CFTypeRef)(iterator);
     };
     void (^complete)(void) = ^{
         // Release any stored iterator.
@@ -43,21 +43,20 @@ body:
         setIterator(self.makeIterator());
     }
     
-    var countOfItemsAlreadyEnumerated = state->state;
+    var enumeratedCount = state->state;
     var count = (NSUInteger)0;
     state->itemsPtr = buffer;
     while (count < bufferLength) {
-        id<IteratorProtocol> iterator = getIterator();
-        __autoreleasing id element = iterator.next;
-        if (element == nil) {
+        id next = getIterator().next;
+        if (next == nil) {
             complete();
             break;
         }
-        buffer[countOfItemsAlreadyEnumerated++] = element;
+        buffer[enumeratedCount++] = next;
         ++count;
     }
 done:
-    state->state = countOfItemsAlreadyEnumerated;
+    state->state = enumeratedCount;
     return count;
 }
 
