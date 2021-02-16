@@ -1,6 +1,8 @@
-# objc-evolution
+# The Objective-C Programming Language Evolution
 
 That day, if swift had never been released... Would Objective-C be different?
+
+The `objc-evolutions` project maintains the major personal proposals for changes and enhancements to the The Objective-C Programming Language.
 
 - [Extended](#extended)
 - [Requirements](#requirements)
