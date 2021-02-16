@@ -1,6 +1,6 @@
 # objc-evolution
 
-objc-evolution is a swift style extension for Cocoa Framework.
+That day, if Swift had never been released... Would Objective-C be different?
 
 - [Extended](#extended)
 - [Requirements](#requirements)
