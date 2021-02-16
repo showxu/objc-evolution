@@ -42,4 +42,4 @@ $ pod install
 
 ## License
 
-swift-objc is released under the [MIT licenss](https://github.com/0xxd0/objc-evolution/blob/master/LICENSE).
+objc-evolution is released under the [MIT licenss](https://github.com/0xxd0/objc-evolution/blob/master/LICENSE).
