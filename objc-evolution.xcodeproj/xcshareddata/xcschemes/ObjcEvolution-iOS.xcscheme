@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "330CBA541FF36EE1001FD41C"
+               BlueprintIdentifier = "330CBA431FF36DC4001FD41C"
                BuildableName = "swift-objc.framework"
-               BlueprintName = "swift-objc-ios"
-               ReferencedContainer = "container:swift-objc.xcodeproj">
+               BlueprintName = "ObjcEvolution-iOS"
+               ReferencedContainer = "container:objc-evolution.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "330CBA541FF36EE1001FD41C"
+            BlueprintIdentifier = "330CBA431FF36DC4001FD41C"
             BuildableName = "swift-objc.framework"
-            BlueprintName = "swift-objc-ios"
-            ReferencedContainer = "container:swift-objc.xcodeproj">
+            BlueprintName = "ObjcEvolution-iOS"
+            ReferencedContainer = "container:objc-evolution.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

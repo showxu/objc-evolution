@@ -58,7 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27F07C0225DC1F16004E95E6 /* cocoa-swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "cocoa-swift.podspec"; sourceTree = "<group>"; };
+		27F07C0225DC1F16004E95E6 /* objc-evolution.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "objc-evolution.podspec"; sourceTree = "<group>"; };
 		27F07C1F25DC25BC004E95E6 /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type.h; sourceTree = "<group>"; };
 		27F07C2025DC25BC004E95E6 /* Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocol.h; sourceTree = "<group>"; };
 		27F07C2125DC25BC004E95E6 /* Extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Extension.cpp; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		3311FBD91FF37A6300DBEB0B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		3311FBDA1FF37A6300DBEB0B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		338277671FF930B50077F5F4 /* objc-swfit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = "objc-swfit.h"; sourceTree = "<group>"; };
-		3382778E1FF951690077F5F4 /* swift-objcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-objcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3382778E1FF951690077F5F4 /* ObjcEvolutionTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjcEvolutionTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338277901FF951690077F5F4 /* objc-swfitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "objc-swfitTests.m"; sourceTree = "<group>"; };
 		3382779C1FF952780077F5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,7 +172,7 @@
 			children = (
 				330CBA441FF36DC4001FD41C /* swift-objc.framework */,
 				330CBA551FF36EE1001FD41C /* swift-objc.framework */,
-				3382778E1FF951690077F5F4 /* swift-objcTests.xctest */,
+				3382778E1FF951690077F5F4 /* ObjcEvolutionTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 		3311FBCE1FF373E000DBEB0B /* Deployment */ = {
 			isa = PBXGroup;
 			children = (
-				27F07C0225DC1F16004E95E6 /* cocoa-swift.podspec */,
+				27F07C0225DC1F16004E95E6 /* objc-evolution.podspec */,
 				3311FBD21FF373EE00DBEB0B /* README.md */,
 				3311FBCF1FF373EE00DBEB0B /* LICENSE */,
 			);
@@ -268,9 +268,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		330CBA431FF36DC4001FD41C /* swift-objc-macosx */ = {
+		330CBA431FF36DC4001FD41C /* ObjcEvolution-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 330CBA4C1FF36DC4001FD41C /* Build configuration list for PBXNativeTarget "swift-objc-macosx" */;
+			buildConfigurationList = 330CBA4C1FF36DC4001FD41C /* Build configuration list for PBXNativeTarget "ObjcEvolution-iOS" */;
 			buildPhases = (
 				330CBA3F1FF36DC4001FD41C /* Sources */,
 				330CBA401FF36DC4001FD41C /* Frameworks */,
@@ -281,14 +281,14 @@
 			);
 			dependencies = (
 			);
-			name = "swift-objc-macosx";
+			name = "ObjcEvolution-iOS";
 			productName = CocoaSwift;
 			productReference = 330CBA441FF36DC4001FD41C /* swift-objc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		330CBA541FF36EE1001FD41C /* swift-objc-ios */ = {
+		330CBA541FF36EE1001FD41C /* ObjcEvolutionios-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 330CBA5A1FF36EE2001FD41C /* Build configuration list for PBXNativeTarget "swift-objc-ios" */;
+			buildConfigurationList = 330CBA5A1FF36EE2001FD41C /* Build configuration list for PBXNativeTarget "ObjcEvolutionios-macOS" */;
 			buildPhases = (
 				330CBA501FF36EE1001FD41C /* Sources */,
 				330CBA511FF36EE1001FD41C /* Frameworks */,
@@ -299,14 +299,14 @@
 			);
 			dependencies = (
 			);
-			name = "swift-objc-ios";
+			name = "ObjcEvolutionios-macOS";
 			productName = CocoaSwift.iOS;
 			productReference = 330CBA551FF36EE1001FD41C /* swift-objc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3382778D1FF951690077F5F4 /* swift-objcTests */ = {
+		3382778D1FF951690077F5F4 /* ObjcEvolutionTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 338277981FF951690077F5F4 /* Build configuration list for PBXNativeTarget "swift-objcTests" */;
+			buildConfigurationList = 338277981FF951690077F5F4 /* Build configuration list for PBXNativeTarget "ObjcEvolutionTest" */;
 			buildPhases = (
 				3382778A1FF951690077F5F4 /* Sources */,
 				3382778B1FF951690077F5F4 /* Frameworks */,
@@ -317,9 +317,9 @@
 			dependencies = (
 				338277951FF951690077F5F4 /* PBXTargetDependency */,
 			);
-			name = "swift-objcTests";
+			name = ObjcEvolutionTest;
 			productName = CocoaSwiftTests;
-			productReference = 3382778E1FF951690077F5F4 /* swift-objcTests.xctest */;
+			productReference = 3382778E1FF951690077F5F4 /* ObjcEvolutionTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -347,7 +347,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 330CBA3E1FF36DC4001FD41C /* Build configuration list for PBXProject "swift-objc" */;
+			buildConfigurationList = 330CBA3E1FF36DC4001FD41C /* Build configuration list for PBXProject "objc-evolution" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -360,9 +360,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				330CBA431FF36DC4001FD41C /* swift-objc-macosx */,
-				330CBA541FF36EE1001FD41C /* swift-objc-ios */,
-				3382778D1FF951690077F5F4 /* swift-objcTests */,
+				330CBA431FF36DC4001FD41C /* ObjcEvolution-iOS */,
+				330CBA541FF36EE1001FD41C /* ObjcEvolutionios-macOS */,
+				3382778D1FF951690077F5F4 /* ObjcEvolutionTest */,
 			);
 		};
 /* End PBXProject section */
@@ -429,7 +429,7 @@
 /* Begin PBXTargetDependency section */
 		338277951FF951690077F5F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 330CBA431FF36DC4001FD41C /* swift-objc-macosx */;
+			target = 330CBA431FF36DC4001FD41C /* ObjcEvolution-iOS */;
 			targetProxy = 338277941FF951690077F5F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -676,7 +676,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		330CBA3E1FF36DC4001FD41C /* Build configuration list for PBXProject "swift-objc" */ = {
+		330CBA3E1FF36DC4001FD41C /* Build configuration list for PBXProject "objc-evolution" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				330CBA4A1FF36DC4001FD41C /* Debug */,
@@ -685,7 +685,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		330CBA4C1FF36DC4001FD41C /* Build configuration list for PBXNativeTarget "swift-objc-macosx" */ = {
+		330CBA4C1FF36DC4001FD41C /* Build configuration list for PBXNativeTarget "ObjcEvolution-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				330CBA4D1FF36DC4001FD41C /* Debug */,
@@ -694,7 +694,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		330CBA5A1FF36EE2001FD41C /* Build configuration list for PBXNativeTarget "swift-objc-ios" */ = {
+		330CBA5A1FF36EE2001FD41C /* Build configuration list for PBXNativeTarget "ObjcEvolutionios-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				330CBA5B1FF36EE2001FD41C /* Debug */,
@@ -703,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		338277981FF951690077F5F4 /* Build configuration list for PBXNativeTarget "swift-objcTests" */ = {
+		338277981FF951690077F5F4 /* Build configuration list for PBXNativeTarget "ObjcEvolutionTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				338277961FF951690077F5F4 /* Debug */,

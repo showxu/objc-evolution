@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CocoaSwift.xcodeproj">
+      location = "self:/Users/xudongxu/Developer/swift-objc/objc-evolution.xcodeproj">
    </FileRef>
 </Workspace>

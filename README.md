@@ -1,6 +1,6 @@
-# objc-swift
+# objc-evolution
 
-objc-swift is a swift style extension for Cocoa Framework.
+objc-evolution is a swift style extension for Cocoa Framework.
 
 - [Extended](#extended)
 - [Requirements](#requirements)
@@ -22,7 +22,7 @@ objc-swift is a swift style extension for Cocoa Framework.
 
 ### CocoaPods
 
-To integrate Cocoa.Swift into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate objc-evolution into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -30,7 +30,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target '<#Your Target Name#>' do
-    pod 'objc-swift', '~> 0.1.0'
+    pod 'objc-evolution', '~> 0.1.0'
 end
 ```
 
@@ -42,4 +42,4 @@ $ pod install
 
 ## License
 
-Cocoa.Swift is released under the [MIT licenss](https://github.com/0xxd0/objc-swift/blob/master/LICENSE).
+swift-objc is released under the [MIT licenss](https://github.com/0xxd0/objc-evolution/blob/master/LICENSE).

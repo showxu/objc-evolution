@@ -1,9 +1,8 @@
 Pod::Spec.new do |s|
-  fmwk_name = 'cocoa-swift'
-  src_root = fmwk_name + '/cocoa-swift/'
-  prefix_header_path = src_root + 'Public Headers/swift.h'
-  public_header_path = src_root + 'Public Headers/*'
-  src_file_path = src_root + 'Source/*.{h,c,hpp,cpp,m,mm,swift}}'
+  fmwk_name = 'ObjcEvolution'
+  prefix_header_path = 'Sources/swift.h'
+  public_header_path = 'Sources/*.{h,hpp}'
+  src_file_path = 'Sources/*.{h,c,hpp,cpp,m,mm,swift}}'
   
   repo_git_host = 'https://github.com/'
   repo_author = 'Xudong Xu'
@@ -15,7 +14,7 @@ Pod::Spec.new do |s|
   s.name         = fmwk_name
   s.version      = repo_ver
   s.license      = 'MIT'
-  s.summary      = 'A swifty extension for Cocoa Framework.'
+  s.summary      = 'An extension for Foundation to make Objective-C more swift style.'
   s.homepage     = repo_page
   s.authors      = { repo_author => repo_author_mail }
   s.source       = { :git => repo_git, :tag => "#{s.version}" }
@@ -27,7 +26,7 @@ Pod::Spec.new do |s|
   
   s.prefix_header_file = prefix_header_path
   s.public_header_files = public_header_path
-  s.source_files = src_path
+  s.source_files = src_file_path
   s.exclude_files = prefix_header_path
 
   s.pod_target_xcconfig = {
