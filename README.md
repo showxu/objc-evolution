@@ -1,6 +1,6 @@
 # objc-evolution
 
-That day, if Swift had never been released... Would Objective-C be different?
+That day, if swift had never been released... Would Objective-C be different?
 
 - [Extended](#extended)
 - [Requirements](#requirements)
