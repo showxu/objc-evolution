@@ -34,17 +34,6 @@ let elements = NSMutableArray<NSString *>.array;
 
 This functionality is strictly additive, and does not break any existing code: it only makes some previously ill-formed code well-formed, and does not change the behavior of any well-formed code.
 
-## Effect on API resilience
-
-API resilience describes the changes one can make to a public API
-without breaking its ABI. Does this proposal introduce features that
-would become part of a public API? If so, what kinds of changes can be
-made without breaking ABI? Can this feature be added/removed without
-breaking ABI? For more information about the resilience model, see the
-[library evolution
-document](https://github.com/apple/swift/blob/master/docs/LibraryEvolution.rst)
-in the Swift repository.
-
 ## Alternatives considered
 
 The primary alternative here is to do nothing: objc variable will continue to specific types for variables.
