@@ -1,0 +1,36 @@
+name: build
+on: 
+  push:
+    paths-ignore:
+    - 'README.md'
+    - 'LICENSE'
+jobs: 
+  build:
+    runs-on: macos-latest
+    strategy:
+      max-parallel: 2
+      matrix:  
+        configuration: [debug, release]
+        scheme: [objc]
+        # testscheme: [objc_tests]
+        arch: [x86_64] 
+        sdk: [macosx]
+        # destination: [
+        #   'platform=macOS', 
+        #   'platform=iOS Simulator,name=iPhone 8', 
+        #   'platform=tvOS Simulator,name=Apple TV', 
+        #   'platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm'
+        # ]
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        xcodebuild -project objc.xcodeproj \
+          -scheme ${{ matrix.scheme }} \
+          -configuration ${{ matrix.configuration }} \
+          -arch ${{ matrix.arch }} \
+          -sdk ${{ matrix.sdk }}
+    # - run: |
+    #     xcodebuild test -project objc.xcodeproj \
+    #       -scheme "${{ matrix.testscheme }}" \
+    #       -destination "${{ matrix.destination }}" \
+    #       -configuration ${{ matrix.configuration }} \

@@ -27,7 +27,7 @@ var elements = [String]();
 Allow the use of `let` `var` except inout, var. This only affects the grammar in variable declaration.
 
 ```objc
-let elements = NSMutableArray<NSString *>.array;
+let elements = [NSMutableArray<NSString *> array];
 ```
 
 ## Source compatibility
