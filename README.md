@@ -2,7 +2,7 @@
 
 ![build](https://github.com/0xxd0/objc-evolution/workflows/build/badge.svg?branch=master)
 
-That day, if swift had never been released... Would Objective-C be different?
+> That day, if swift had never been released..., Would Objective-C be different?
 
 This `objc-evolutions` repository maintains personal major proposals for exploration and enhancements to the The Objective-C Programming Language.
 
