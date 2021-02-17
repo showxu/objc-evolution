@@ -1,4 +1,6 @@
 //
+//  Extension.cpp
+//
 //  Created by Xudong Xu on 2016/12/27.
 //  Copyright (c) 2021 Xudong Xu. All rights reserved.
 //
@@ -12,14 +14,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-namespace objcswift::protocol {
-
-struct Extension {
+struct objc_extension {
 #   define CONSTRUCTOR_PRIORITY 100
     static pthread_mutex_t key;
     static size_t count;
     static size_t capacity;
-    static Extension *extensions;
+    static objc_extension *extensions;
     
     ::Protocol *protocol;
     ::Class associated_class;
@@ -47,7 +47,7 @@ private:
             if (new_capacity < capacity) {
                 new_capacity = SIZE_MAX;
             }
-            if (let ptr = (Extension *)realloc(extensions, sizeof(*extensions) * new_capacity)) {
+            if (let ptr = (objc_extension *)realloc(extensions, sizeof(*extensions) * new_capacity)) {
                 capacity = new_capacity;
                 extensions = ptr;
             } else {
@@ -55,7 +55,7 @@ private:
             }
         }
         assert(count < capacity);
-        extensions[count] = (Extension) {
+        extensions[count] = (objc_extension) {
             .protocol = protocol,
             .associated_class = associated_class,
         };
@@ -118,17 +118,13 @@ private:
     }
 };
 
-var Extension::key = (pthread_mutex_t)PTHREAD_MUTEX_INITIALIZER;
-var Extension::count = (size_t)0;
-var Extension::capacity = (size_t)0;
-var Extension::extensions = (Extension *)NULL;
+var objc_extension::key = (pthread_mutex_t)PTHREAD_MUTEX_INITIALIZER;
+var objc_extension::count = (size_t)0;
+var objc_extension::capacity = (size_t)0;
+var objc_extension::extensions = (objc_extension *)NULL;
     
-}
-
-using namespace objcswift::protocol;
-
 void protocol_load_extention(Protocol *p, Class cls) {
-    var extension = (Extension) {
+    var extension = (objc_extension) {
         .protocol = p,
         .associated_class = cls,
     };

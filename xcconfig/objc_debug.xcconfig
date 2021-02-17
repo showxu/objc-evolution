@@ -1,0 +1,4 @@
+#include "debug.xcconfig"
+
+EXECUTABLE_PREFIX = lib
+PRODUCT_NAME = $(TARGET_NAME).Z

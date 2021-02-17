@@ -1,18 +1,18 @@
 //
-//  objc-evolution
+//  RuntimeTests
 //
 //  Created by Xudong Xu on 2017/1/1.
 //  Copyright (c) 2021 Xudong Xu. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "objc-evolution.h"
+#import "Array.h"
 
-@interface objcswiftTests : XCTestCase
+@interface ObjCRuntimeTests : XCTestCase
 
 @end
 
-@implementation objcswiftTests
+@implementation ObjCRuntimeTests
 
 - (void)setUp {
     [super setUp];
@@ -24,9 +24,10 @@
     [super tearDown];
 }
 
-- (void)testExtension {
+- (void)testTypeInference {
     // stub enumeratedType
-    (void)Array.Element;
+    let element = [Array<NSNumber *> Element];
+    XCTAssertTrue(element.boolValue == 0);
 }
 
 - (void)testPerformanceExample {

@@ -1,5 +1,5 @@
 //
-//  objc-evolution
+//  Equatable.m
 //
 //  Created by Alchemist on 2017/1/1.
 //  Copyright (c) 2021 Xudong Xu. All rights reserved.
